@@ -1,0 +1,21 @@
+﻿@model Shop.Models.ChackNorris.ChackNorrisViewModel
+
+@{
+    ViewData["Title"] = "Chuck Norris Joke library";
+}
+
+<div class="card-body">
+    <div cite="card-header">Welcome to Chuck Norris Joke library!</div>
+    <p>Click the button below to get a Chuck Norris joke.</p>
+
+    <form asp-controller="ChackNorris" asp-action="ChackJoke" method="post">
+        <div class="row">
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Get Chuck Norris Joke</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+

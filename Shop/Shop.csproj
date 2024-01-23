@@ -1,0 +1,103 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>32f68892-5121-4858-b85b-62be70accea7</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\css\kindergartencss\**" />
+    <Compile Remove="wwwroot\css\realestatecss\**" />
+    <Compile Remove="wwwroot\css\spaceshipcss\**" />
+    <Content Remove="wwwroot\css\kindergartencss\**" />
+    <Content Remove="wwwroot\css\realestatecss\**" />
+    <Content Remove="wwwroot\css\spaceshipcss\**" />
+    <EmbeddedResource Remove="wwwroot\css\kindergartencss\**" />
+    <EmbeddedResource Remove="wwwroot\css\realestatecss\**" />
+    <EmbeddedResource Remove="wwwroot\css\spaceshipcss\**" />
+    <None Remove="wwwroot\css\kindergartencss\**" />
+    <None Remove="wwwroot\css\realestatecss\**" />
+    <None Remove="wwwroot\css\spaceshipcss\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Identity.Core" Version="2.2.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.21" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.21" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.21" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.21">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.21" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.21" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.21">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="6.0.21" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="6.0.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Shop.ApplicationServices\Shop.ApplicationServices.csproj" />
+    <ProjectReference Include="..\Shop.Data\Shop.Data.csproj" />
+    <ProjectReference Include="..\Shop.Core\Shop.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="multipleFileUpload\" />
+    <Folder Include="imgSpace\" />
+    <Folder Include="Views\Accounts\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\lib\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <None Include="wwwroot\lib\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <None Include="wwwroot\lib\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map" />
+    <None Include="wwwroot\lib\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map" />
+    <None Include="wwwroot\lib\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <None Include="wwwroot\lib\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <None Include="wwwroot\lib\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map" />
+    <None Include="wwwroot\lib\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map" />
+    <None Include="wwwroot\lib\lib\bootstrap\dist\css\bootstrap-utilities.css.map" />
+    <None Include="wwwroot\lib\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map" />
+    <None Include="wwwroot\lib\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map" />
+    <None Include="wwwroot\lib\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map" />
+    <None Include="wwwroot\lib\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <None Include="wwwroot\lib\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\lib\lib\bootstrap\dist\css\bootstrap.rtl.css.map" />
+    <None Include="wwwroot\lib\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map" />
+    <None Include="wwwroot\lib\lib\bootstrap\dist\js\bootstrap.bundle.js" />
+    <None Include="wwwroot\lib\lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <None Include="wwwroot\lib\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\lib\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <None Include="wwwroot\lib\lib\bootstrap\dist\js\bootstrap.esm.js" />
+    <None Include="wwwroot\lib\lib\bootstrap\dist\js\bootstrap.esm.js.map" />
+    <None Include="wwwroot\lib\lib\bootstrap\dist\js\bootstrap.esm.min.js" />
+    <None Include="wwwroot\lib\lib\bootstrap\dist\js\bootstrap.esm.min.js.map" />
+    <None Include="wwwroot\lib\lib\bootstrap\dist\js\bootstrap.js" />
+    <None Include="wwwroot\lib\lib\bootstrap\dist\js\bootstrap.js.map" />
+    <None Include="wwwroot\lib\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <None Include="wwwroot\lib\lib\bootstrap\dist\js\bootstrap.min.js.map" />
+    <None Include="wwwroot\lib\lib\bootstrap\LICENSE" />
+    <None Include="wwwroot\lib\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <None Include="wwwroot\lib\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <None Include="wwwroot\lib\lib\jquery-validation\dist\additional-methods.js" />
+    <None Include="wwwroot\lib\lib\jquery-validation\dist\additional-methods.min.js" />
+    <None Include="wwwroot\lib\lib\jquery-validation\dist\jquery.validate.js" />
+    <None Include="wwwroot\lib\lib\jquery-validation\dist\jquery.validate.min.js" />
+    <None Include="wwwroot\lib\lib\jquery-validation\LICENSE.md" />
+    <None Include="wwwroot\lib\lib\jquery\dist\jquery.js" />
+    <None Include="wwwroot\lib\lib\jquery\dist\jquery.min.js" />
+    <None Include="wwwroot\lib\lib\jquery\dist\jquery.min.map" />
+  </ItemGroup>
+
+</Project>

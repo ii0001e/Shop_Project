@@ -1,0 +1,73 @@
+﻿@model Shop.Models.Kindergarten.KindergartenCreateUpdateViewModel
+
+
+
+    @if (Model.Id.HasValue)
+    {
+        <div class="card-header">
+            Update
+
+        </div>
+
+    }
+    else
+    {
+        <div class="card-header">
+            Create
+
+        </div>
+
+
+    }
+<div class="card-body">
+    <form class="login-form"  method="post" enctype="multipart/form-data">
+        <input asp-for="Id" type="hidden" />
+        <input asp-for="CreatedAt" type="hidden" />
+
+
+        <div class="form-input-material">
+            <label asp-for="GroupName" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="GroupName" class="form-control" />
+
+            </div>
+        </div>
+
+        <div class="form-input-material">
+            <label asp-for="ChildrenCount" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="ChildrenCount" class="form-control" />
+
+            </div>
+        </div>
+
+        <div class="form-input-material">
+            <label asp-for="KindergartenName" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="KindergartenName" class="form-control" />
+
+            </div>
+        </div>
+
+        <div class="form-input-material">
+            <label asp-for="Teacher" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="Teacher" class="form-control" />
+
+            </div>
+        </div>
+
+        <hr />
+        @if (Model.Id.HasValue)
+        {
+            <input asp-action="Update" style="width:10%;" asp-controller="Kindergartens" type="submit" class="btn btn-primary" value="Update" />
+
+        }
+        else
+        {
+            <input asp-action="Create" style="width:10%;" asp-controller="Kindergartens" type="submit" class=" btn btn-info" value="Create" />
+        }
+
+        <a asp-action="index" style="width:10%;" class="btn btn-primary">Back</a>
+    </form>
+</div>

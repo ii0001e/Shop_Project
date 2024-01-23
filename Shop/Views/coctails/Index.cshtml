@@ -1,0 +1,21 @@
+﻿@model Shop.Models.Coctails.SeachCoctailViewModel
+
+
+<div class="card-body">
+    <div class="card-header col-md-offset-3 col-md-3">Seach a coctail</div>
+    <form method="post">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-3 ">
+                <label asp-for="CoctailName" style="font-family:Arial"></label>
+                <input asp-for="CoctailName" class="form-control" />
+                <span asp-validation-for="CoctailName" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-offset-3 col-md-5">
+                <button asp-controller="coctails" style="margin-top: 10px;" asp-action="SearchCoctail" class="btn btn-primary">Search</button>
+            </div>
+        </div>
+    </form>
+</div>

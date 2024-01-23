@@ -1,0 +1,128 @@
+﻿@model Shop.Models.Realestate.RealEstateCreateUpdateViewModel
+
+
+<div>
+    <div class="row">
+    @if (Model.Id.HasValue)
+    {
+        <div class="accordion-header">
+
+            <div class="red">Update</div>
+        </div>
+
+    }
+    else
+    {
+        <div class="accordion-header">
+
+            <div class="red">Create</div>
+        </div>
+
+    }
+    <form class="login-form"  method="post" enctype="multipart/form-data">
+        <input asp-for="Id" type="hidden" />
+        <input asp-for="CreatedAt" type="hidden" />
+
+
+        <div class="form-input-material">
+            <label asp-for="Address" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="Address" class="form-control" />
+
+            </div>
+        </div>
+
+        <div class="form-input-material">
+            <label asp-for="SizeSqrM" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="SizeSqrM" class="form-control" />
+
+            </div>
+        </div>
+
+        <div class="form-input-material">
+            <label asp-for="RoomCount" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="RoomCount" class="form-control" />
+
+            </div>
+        </div>
+
+        <div class="form-input-material">
+            <label asp-for="Floor" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="Floor" class="form-control" />
+
+            </div>
+        </div>
+
+        <div class="form-input-material">
+            <label asp-for="BuildingType" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="BuildingType" class="form-control" />
+
+            </div>
+        </div>
+
+        <div class="form-input-material">
+            <label asp-for="BuiltinYear" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="BuiltinYear" class="form-control" />
+
+            </div>
+        </div>
+
+        <div style="margin-top:5px;" class="form-group row">
+            <label asp-for="Files" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-5">
+                <div class="custom-file">
+                    <input class="form-control custom-file-label" asp-for="Files" multiple type="file" />
+
+                    <label class="custom-file-label">Choose file...</label>
+                </div>
+
+            </div>
+        </div>
+
+
+        @foreach (var images in Model.Image)
+        {
+            <partial name="_Images" model="images" />
+            <input asp-action="RemoveImage" asp-controller="RealEstate" style="width:15%;" asp-route-imageId="@images.ImageId" type="submit" class="btn btn-danger" value="Remove Image" />
+        }
+
+
+
+
+        <hr />
+        @if (Model.Id.HasValue)
+        {
+            <input asp-action="Update" style="width:10%;" asp-controller="RealEstate" type="submit" class="btn btn-info" value="Update" />
+
+        }
+        else
+        {
+            <input asp-action="Create" style="width:10%;" asp-controller="RealEstate" type="submit" class="btn btn-info" value="Create" />
+        }
+
+        <a asp-action="index" style="width:10%;" class="btn btn-info">Back</a>
+    </form>
+</div>
+</div>
+@section Scripts
+    {
+    <script>
+        $(document).ready(function () {
+            $('.custom-file-input').on("change", function () {
+                var fileLabel = $(this).next('.custom-file-label');
+                var files = $(this)[0].files;
+                if (files.length > 1) {
+                    fileLabel.html(files.length + ' files selected');
+                }
+                else if (files.length == 1) {
+                    fileLabel.html(files[0].name);
+                }
+            })
+        });
+    </script>
+}

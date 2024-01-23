@@ -1,0 +1,95 @@
+﻿@model Shop.Models.Spaceship.SpaceshipDetailsViewModel
+
+<div class="container">
+    <div class="card-header">
+        Spaceships Details
+    </div>
+    <div class="card-body">
+    <div class="formHeight">
+        <div class="form-group row">
+            <label asp-for="Id" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model=>Model.Id)
+        </div>
+
+        <div class="form-group row">
+        <label asp-for="Name" class="col-sm-2 col-form-label"></label>
+        @Html.DisplayFor(model=>Model.Name)
+
+        </div>
+
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Image</label>
+                <div class="col-sm">
+
+                        @foreach (var image in Model.FileToApiViewModels)
+                        {
+                            <div class="col-md-3">
+                                <partial name="_Images" model="image" />
+                            </div>
+                        }
+
+                </div>
+            </div>
+
+        <div class="form-group row">
+        <label asp-for="Type" class="col-sm-2 col-form-label"></label>
+        @Html.DisplayFor(model=>Model.Type)
+
+        </div>
+
+        <div class="form-group row">
+        <label asp-for="Passangers" class="col-sm-2 col-form-label"></label>
+        @Html.DisplayFor(model=>Model.Passangers)
+
+        </div>
+
+        <div class="form-group row">
+        <label asp-for="EnginPower" class="col-sm-2 col-form-label"></label>
+        @Html.DisplayFor(model=>Model.EnginPower)
+
+        </div>
+
+        <div class="form-group row">
+        <label asp-for="Crew" class="col-sm-2 col-form-label"></label>
+        @Html.DisplayFor(model=>Model.Crew)
+
+        </div>
+
+        <div class="form-group row">
+        <label asp-for="Company" class="col-sm-2 col-form-label"></label>
+        @Html.DisplayFor(model=>Model.Company)
+
+        </div>
+
+        <div class="form-group row">
+        <label asp-for="CargoWeight" class="col-sm-2 col-form-label"></label>
+        @Html.DisplayFor(model=>Model.CargoWeight)
+
+        </div>
+
+        <div class="form-group row">
+        <label asp-for="CreatedAt" class="col-sm-2 col-form-label"></label>
+        @Html.DisplayFor(model=>Model.CreatedAt)
+
+        </div>
+
+        <div class="form-group row">
+        <label asp-for="Modifieted" class="col-sm-2 col-form-label"></label>
+        @Html.DisplayFor(model=>Model.Modifieted)
+
+        </div>
+
+
+    </div>
+    </div>
+</div>
+<div style="margin-left:2vw; margin-top:10px">
+    <a asp-action="index" class="btn btn-primary">Back</a>
+</div>
+
+
+    <style>
+
+    </style>
+

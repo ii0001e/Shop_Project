@@ -1,0 +1,160 @@
+﻿@model Shop.Models.Coctails.CoctailsIndexViewModel
+
+<div class="card-body">
+    <div cite="card-header">Recipe for selected cocktail</div>
+    <h2>@Html.DisplayFor(model => model.strDrink)</h2>
+    <hr />
+
+    <table class="table table-bordered">
+        <tr>
+            <th class="col-sm-2">ID</th>
+            <td class="col-sm-10">@Html.DisplayFor(model => model.idDrink)</td>
+        </tr>
+
+        @if (!string.IsNullOrEmpty(Model.strTags))
+        {
+            <tr>
+                <th class="col-sm-2">Tags</th>
+                <td class="col-sm-10">@Html.DisplayFor(model => model.strTags)</td>
+            </tr>
+        }
+
+        @if (!string.IsNullOrEmpty(Model.strCategory))
+        {
+            <tr>
+                <th class="col-sm-2">Category</th>
+                <td class="col-sm-10">@Html.DisplayFor(model => model.strCategory)</td>
+            </tr>
+        }
+
+        @if (!string.IsNullOrEmpty(Model.strIBA))
+        {
+            <tr>
+                <th class="col-sm-2">IBA</th>
+                <td class="col-sm-10">@Html.DisplayFor(model => model.strIBA)</td>
+            </tr>
+        }
+
+        @if (!string.IsNullOrEmpty(Model.strAlcoholic))
+        {
+            <tr>
+                <th class="col-sm-2">Alcoholic</th>
+                <td class="col-sm-10">@Html.DisplayFor(model => model.strAlcoholic)</td>
+            </tr>
+        }
+
+        @if (!string.IsNullOrEmpty(Model.strGlass))
+        {
+            <tr>
+                <th class="col-sm-2">Glass</th>
+                <td class="col-sm-10">@Html.DisplayFor(model => model.strGlass)</td>
+            </tr>
+        }
+
+        @if (!string.IsNullOrEmpty(Model.strInstructions))
+        {
+            <tr>
+                <th class="col-sm-2">Instructions</th>
+                <td class="col-sm-10">@Html.DisplayFor(model => model.strInstructions)</td>
+            </tr>
+        }
+        @if (!string.IsNullOrEmpty(Model.strInstructionsES))
+        {
+            <tr>
+                <th class="col-sm-2">InstructionsES</th>
+                <td class="col-sm-10">@Html.DisplayFor(model => model.strInstructionsES)</td>
+            </tr>
+        }
+        @if (!string.IsNullOrEmpty(Model.strInstructionsDE))
+        {
+            <tr>
+                <th class="col-sm-2">InstructionsDE</th>
+                <td class="col-sm-10">@Html.DisplayFor(model => model.strInstructionsDE)</td>
+            </tr>
+        }
+        @if (!string.IsNullOrEmpty(Model.strInstructionsFR))
+        {
+            <tr>
+                <th class="col-sm-2">InstructionsFR</th>
+                <td class="col-sm-10">@Html.DisplayFor(model => model.strInstructionsFR)</td>
+            </tr>
+        }
+        @if (!string.IsNullOrEmpty(Model.strInstructionsIT))
+        {
+            <tr>
+                <th class="col-sm-2">InstructionsIT</th>
+                <td class="col-sm-10">@Html.DisplayFor(model => model.strInstructionsIT)</td>
+            </tr>
+        }
+        @if (!string.IsNullOrEmpty(Model.strInstructionsZHHANS))
+        {
+            <tr>
+                <th class="col-sm-2">InstructionsZHHANS</th>
+                <td class="col-sm-10">@Html.DisplayFor(model => model.strInstructionsZHHANS)</td>
+            </tr>
+            @if (!string.IsNullOrEmpty(Model.strInstructionsZHHANT))
+            {
+                <tr>
+                    <th class="col-sm-2">InstructionsZHHANT</th>
+                    <td class="col-sm-10">@Html.DisplayFor(model => model.strInstructionsZHHANT)</td>
+                </tr>
+            }
+        }
+
+        @for (int i = 1; i <= 15; i++)
+        {
+            var Ingredient = $"strIngredient{i}";
+            var measureProperty = $"strMeasure{i}";
+
+            var ingredientValue = Model.GetType().GetProperty(Ingredient)?.GetValue(Model) as string;
+            var measureValue = Model.GetType().GetProperty(measureProperty)?.GetValue(Model) as string;
+
+            if (!string.IsNullOrEmpty(ingredientValue))
+            {
+                <tr>
+                    <th class="col-sm-2">Ingredient @i</th>
+                    <td class="col-sm-10"><b>@Html.DisplayFor(model => ingredientValue)</b> : @Html.DisplayFor(model => measureValue) oz</td>
+                </tr>
+            }
+        }
+
+        @if (!string.IsNullOrEmpty(Model.strImageSource))
+        {
+            <tr>
+                <th class="col-sm-2">Image Source</th>
+                <td class="col-sm-10">@Html.DisplayFor(model => model.strImageSource)</td>
+            </tr>
+        }
+
+        @if (!string.IsNullOrEmpty(Model.strImageAttribution))
+        {
+            <tr>
+                <th class="col-sm-2">Image Attribution</th>
+                <td class="col-sm-10">@Html.DisplayFor(model => model.strImageAttribution)</td>
+            </tr>
+        }
+
+        @if (!string.IsNullOrEmpty(Model.strCreativeCommonsConfirmed))
+        {
+            <tr>
+                <th class="col-sm-2">Creative Commons Confirmed</th>
+                <td class="col-sm-10">@Html.DisplayFor(model => model.strCreativeCommonsConfirmed)</td>
+            </tr>
+        }
+
+        @if (Model.dateModified != null)
+        {
+            <tr>
+                <th class="col-sm-2">Date Modified</th>
+                <td class="col-sm-10">@Html.DisplayFor(model => model.dateModified)</td>
+            </tr>
+        }
+    </table>
+    <a asp-action="index" style="width:10%; color:white; margin-left: 17px;" class="btn btn-info">Back</a>
+</div>
+
+<style>
+    td{
+        color: white;
+    }
+</style>

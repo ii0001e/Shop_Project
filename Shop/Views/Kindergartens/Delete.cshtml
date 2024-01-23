@@ -1,0 +1,63 @@
+﻿@model Shop.Models.Kindergarten.KinderGartenDeleteViewModel
+
+<div class="container">
+    <div class="accordion-header">
+        Delete
+
+    </div>
+    <svg viewBox="0 0 600 300">
+        <!-- Symbol-->
+        <symbol id="s-text"><text text-anchor="middle" x="77%" y="18%" dy=".35em">Kindergarten</text></symbol><!-- Duplicate symbols-->
+        <use class="text" xlink:href="#s-text"></use>
+        <use class="text" xlink:href="#s-text"></use>
+        <use class="text" xlink:href="#s-text"></use>
+        <use class="text" xlink:href="#s-text"></use>
+        <use class="text" xlink:href="#s-text"></use>
+    </svg>
+    <hr />
+    <div class="movetable">
+    <dl class="row">
+        <div class="form-group row">
+            <label asp-for="Id" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model => Model.Id)
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="GroupName" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model => Model.GroupName)
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="ChildrenCount" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model => Model.ChildrenCount)
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="KindergartenName" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model => Model.KindergartenName)
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="Teacher" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model => Model.Teacher)
+        </div>
+
+
+        <div class="form-group row">
+            <label asp-for="CreatedAt" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model => Model.CreatedAt)
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="UpdatedAt" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model => Model.UpdatedAt)
+        </div>
+    </dl>
+    </div>
+    <hr />
+    <form asp-action="DeleteConfirmation">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" style="position: absolute; top:70%;" value="Delete" class="btn btn-danger" />
+        <a asp-action="index" style="position: absolute; top:70%; left: 14%;" class="btn btn-primary">Back</a>
+    </form>
+    </div>

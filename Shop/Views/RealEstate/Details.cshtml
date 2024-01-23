@@ -1,0 +1,64 @@
+﻿@model Shop.Models.Realestate.RealEstateDetailsViewModel
+
+
+<div class="card-header">Details</div>
+
+
+
+<div class="card-body">
+        <div class="form-group row">
+            <label asp-for="Id" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model=>Model.Id)
+
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="Address" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model=>Model.Address)
+
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="SizeSqrM" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model=>Model.SizeSqrM)
+
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="RoomCount" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model=>Model.RoomCount)
+
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="Floor" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model=>Model.Floor)
+
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="BuildingType" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model=>Model.BuildingType)
+
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="BuiltinYear" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model=>Model.BuiltinYear)
+
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="CreatedAt" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model=>Model.CreatedAt)
+
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="UpdatedAt" class="col-sm-2 col-form-label"></label>
+            @Html.DisplayFor(model=>Model.UpdatedAt)
+
+        </div>
+<div>
+        <a asp-action="index" class="btn btn-info" style="margin-top:10px; margin-left:1vw; ">Back</a>
+</div>
